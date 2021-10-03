@@ -117,7 +117,7 @@ export const Navbar = () => {
                                 exact
                                 to="/informacion"
                             >
-                                Informacion EDUFAMI
+                                Información EDUFAMI
                             </NavLink>
                         </li>
                         <li><hr className="dropdown-divider"/></li>
@@ -131,7 +131,7 @@ export const Navbar = () => {
                                 className="nav-item nav-link btn"
                                 onClick={ handleLogout }
                             > 
-                                Logout
+                                Cerrar Sesión
                             </button>
                         </li>
                     </ul>

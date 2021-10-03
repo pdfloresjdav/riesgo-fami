@@ -4,6 +4,7 @@ import { types } from '../../types/types';
 import { useForm } from '../../hooks/useForm';
 import { useLocation } from 'react-router-dom';
 import queryString from 'query-string';
+import { signIn } from "../../controllers/basicAuth";
 
 export const LoginScreen = ({ history }) => {
 
@@ -15,23 +16,31 @@ export const LoginScreen = ({ history }) => {
     });
     const { userName } = formValues;
 
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const lastPath = localStorage.getItem('lastPath') || '/';
+        let userPassword = document.getElementById('userPassword').value;
+        let dataLog =  signIn(userName,userPassword);
+        dataLog.then((e)=>{
+            dispatch({
+                type: types.login,
+                payload: {
+                    name: e.data.user.name,
+                    token: e.data.access_token
+                }
+            });
 
-        dispatch({
-            type: types.login,
-            payload: {
-                name: userName
-            }
-        });
+            history.replace( lastPath );
+        })
+        .catch(console.warn)
 
-        history.replace( lastPath );
+        
     }
 
     return (
         <div className="container mt-5">
-            <h1>Login</h1>
+            <h1>Iniciar Sesión</h1>
             <hr />
 
             <form onSubmit={ handleSubmit }>
@@ -49,6 +58,7 @@ export const LoginScreen = ({ history }) => {
                     type="password"
                     placeholder="Contraseña"
                     className="form-control mt-3 mb-3"
+                    id="userPassword"
                     name="userPassword"
                     autoComplete="off"
                 />
@@ -57,8 +67,12 @@ export const LoginScreen = ({ history }) => {
                     type="submit"
                     className="btn m-1 btn-block btn-outline-primary"
                 >
-                    Login
+                    Iniciar Sesión
                 </button>
+                <br/>
+                
+                <br/>
+                <a href="/registro" className="btn m-1 btn-block btn-outline-primary">Registrar Usuario</a>
             </form>
 
         </div>

@@ -5,7 +5,7 @@ import { HomeScreen } from '../components/home/HomeScreen';
 import { CuentaScreen } from '../components/cuenta/CuentaScreen';
 import { LenguaScreen } from '../components/lengua/LenguaScreen';
 import CertificadosScreen from '../components/certificados/CertificadosScreen';
-import { PregresoScreen } from '../components/progreso/PregresoScreen';
+import { ProgresoScreen } from '../components/progreso/ProgresoScreen';
 import { InformacionScreen } from '../components/informacion/InformacionScreen';
 
 
@@ -22,7 +22,7 @@ export const DashboardRoutes = () => {
                 <Route exact path="/cuenta" component={ CuentaScreen } />
                 <Route exact path="/lengua" component={ LenguaScreen } />
                 <Route exact path="/certificados" component={ CertificadosScreen } />
-                <Route exact path="/progreso" component={ PregresoScreen } />
+                <Route exact path="/progreso" component={ ProgresoScreen } />
                 <Route exact path="/informacion" component={ InformacionScreen } />
                     <Redirect to="/" />
                 </Switch>

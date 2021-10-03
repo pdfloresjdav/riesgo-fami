@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const PregresoScreen = () => {
+export const ProgresoScreen = () => {
     return (
         <div>
             <h1>Mi Pogreso</h1>

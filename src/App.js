@@ -2,6 +2,7 @@ import React, { useReducer, useEffect } from 'react'
 import { AppRouter } from './routers/AppRouter'
 import { AuthContext } from './auth/AuthContext'
 import { authReducer } from './auth/authReducer'
+import './App.css';
 
 const init = () => {
     return JSON.parse(localStorage.getItem('user')) || { logged: false };
