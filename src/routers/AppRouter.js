@@ -11,6 +11,7 @@ import { PublicRoute } from './PublicRoute';
 import { LoginScreen } from '../components/login/LoginScreen';
 import { DashboardRoutes } from './DashboardRoutes';
 import { RegisterScreen } from '../components/register/RegisterScreen';
+import { InicioScreen } from '../components/inicio/InicioScreen';
 
 
 export const AppRouter = () => {
@@ -21,6 +22,13 @@ export const AppRouter = () => {
         <Router>
             <div>
                 <Switch> 
+                    <PublicRoute 
+                        exact 
+                        path="/" 
+                        component={ InicioScreen } 
+                        isAuthenticated={ user.logged }
+                    />
+
                     <PublicRoute 
                         exact 
                         path="/login" 
@@ -36,7 +44,7 @@ export const AppRouter = () => {
                     />
                     
                     <PrivateRoute 
-                        path="/" 
+                        path="/home" 
                         component={ DashboardRoutes } 
                         isAuthenticated={ user.logged }
                     />

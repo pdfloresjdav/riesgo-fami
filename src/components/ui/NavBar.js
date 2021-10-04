@@ -51,7 +51,7 @@ export const Navbar = () => {
             <div className="container-fluid">
                 <Link 
                     className="navbar-brand" 
-                    to="/"
+                    to="/home"
                 >
                     Home
                 </Link>

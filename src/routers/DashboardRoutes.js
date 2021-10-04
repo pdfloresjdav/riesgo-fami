@@ -18,13 +18,13 @@ export const DashboardRoutes = () => {
 
             <div className="container mt-2">
                 <Switch>
-                <Route exact path="/" component={ HomeScreen } />
+                <Route exact path="/home" component={ HomeScreen } />
                 <Route exact path="/cuenta" component={ CuentaScreen } />
                 <Route exact path="/lengua" component={ LenguaScreen } />
                 <Route exact path="/certificados" component={ CertificadosScreen } />
                 <Route exact path="/progreso" component={ ProgresoScreen } />
                 <Route exact path="/informacion" component={ InformacionScreen } />
-                    <Redirect to="/" />
+                    <Redirect to="/home" />
                 </Switch>
             </div>
 
