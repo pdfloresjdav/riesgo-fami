@@ -1,0 +1,42 @@
+  
+  @media only screen and (min-device-width: 760px){
+    .wfp--form-requirement{
+      text-align: left;
+      color: red;
+    }
+  
+    .wfp--form-requirement-show{
+      display: block;
+    }
+  
+    .wfp--form-item{
+      height: 70px;
+    }
+    .wfp--form-long>.wfp--form-item {
+      margin-bottom: 0px;
+    }
+    .wfp--breadcrumb{
+        display: flex;
+    }
+  }
+  /* mobile styles */
+  @media only screen and (max-device-width: 760px) {
+    .wfp--form-requirement{
+      text-align: left;
+      color: red;
+    }
+  
+    .wfp--form-requirement-show{
+      display: block;
+    }
+  
+    .wfp--form-item{
+      height: 70px;
+    }
+    .wfp--form-long>.wfp--form-item {
+      margin-bottom: 0px;
+    }
+    .wfp--breadcrumb{
+        display: flex;
+    }
+  }

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { AuthContext } from '../../auth/AuthContext';
 import { types } from '../../types/types';
 import { useForm } from '../../hooks/useForm';
@@ -6,7 +6,9 @@ import { useLocation } from 'react-router-dom';
 import queryString from 'query-string';
 import { signIn } from "../../controllers/basicAuth";
 import { FooterMain } from '../footer/FooterMain';
+import { Form, TextInput, Button  } from "@wfp/ui";
 
+// Login component
 export const LoginScreen = ({ history }) => {
 
     const { dispatch } = useContext( AuthContext );
@@ -17,7 +19,10 @@ export const LoginScreen = ({ history }) => {
     });
     const { userName } = formValues;
 
-
+    useEffect(() => {
+        document.getElementById('userName-error-msg').style.display="none";
+        document.getElementById('userPassword-error-msg').style.display="none";
+    }, [])
     const handleSubmit = (e) => {
         e.preventDefault();
         const btnIngreso = document.getElementById("btnIngresar");
@@ -29,16 +34,23 @@ export const LoginScreen = ({ history }) => {
         let userNameErr = document.getElementById('userName');
         if(userName===""){ 
             userNameErr.classList.add("is-invalid");
+            document.getElementById('userName-error-msg').classList.add("wfp--form-requirement-show");
+            document.getElementById('userName-error-msg').style.display="block";
         }
         else{
             userNameErr.classList.remove("is-invalid");
+            document.getElementById('userName-error-msg').classList.remove("wfp--form-requirement-show");
         }
         let userPasswordErr = document.getElementById('userPassword');
         if(userPassword===""){
             userPasswordErr.classList.add("is-invalid");
+            document.getElementById('userPassword-error-msg').classList.add("wfp--form-requirement-show");
+            document.getElementById('userPassword-error-msg').style.display="block";
         }
         else{
             userPasswordErr.classList.remove("is-invalid");
+            document.getElementById('userPassword-error-msg').classList.remove("wfp--form-requirement-show");
+            
         }
         if(userName!=="" && userPassword!==""){
             let dataLog =  signIn(userName,userPassword);
@@ -73,47 +85,48 @@ export const LoginScreen = ({ history }) => {
         <div className="fondo-main">
             <img src="./assets/idEDUF.png" alt="header" className="img-head"/>
             <div className="text-login-main">
-                <form onSubmit={ handleSubmit } className="needs-validation">
+                <Form onSubmit={ handleSubmit } className="needs-validation">
                     <strong id="invalidMessage" className="invalid-feedback">
-                        * DNI y/o Contraseña invalidas
+                        * Identificación y/o Contraseña invalidas
                     </strong>
-                    <div className="position-relative">
-                        <input 
-                            type="text"
-                            placeholder="DNI"
-                            className="form-control txt-input"
-                            name="userName"
-                            id="userName"
-                            autoComplete="off"
-                            value={ userName }
-                            onChange={ handleInputChange }
-                            
-                        />
-                        <div className="invalid-tooltip">
-                            DNI requerido
-                        </div>
-                    </div>
-                    <div className="position-relative">
-                        <input 
-                            type="password"
-                            placeholder="Contraseña"
-                            className="form-control mt-3 mb-3 txt-input"
-                            id="userPassword"
-                            name="userPassword"
-                            autoComplete="off"
-                        />
-                        <div id="userPasswordErr" className="invalid-tooltip">
-                            Contraseña requerida
-                        </div>
-                    </div>
-
-                    <button
+                    
+                    <TextInput
+                        placeholder="Identificación"
+                        className="form-control txt-input"
+                        name="userName"
+                        id="userName"
+                        autoComplete="off"
+                        value={ userName }
+                        onChange={ handleInputChange }
+                        invalid={{
+                            message: ''
+                            }}
+                        invalidText="Identificación requerido"
+                        required
+                    />
+                        
+                    <TextInput
+                        type="password"
+                        placeholder="Contraseña"
+                        className="form-control mb-3 txt-input"
+                        id="userPassword"
+                        name="userPassword"
+                        autoComplete="off"
+                        invalid={{
+                            message: ''
+                            }}
+                        invalidText="Contraseña requerida"
+                        required
+                    />
+                    <br/>
+                    <br/>
+                    <Button
                         id="btnIngresar"
                         type="submit"
                         className="btn m-1 btn-block btn-wfp-main"
                     >
-                            Ingresar
-                    </button>
+                        Ingresar
+                    </Button>
                     <br/>
                     <br/>
                     ¿Aun no se ha registrado?
@@ -129,7 +142,7 @@ export const LoginScreen = ({ history }) => {
                         Registrarse
                     </a>
                     
-                </form>
+                </Form>
             </div>
 
             <FooterMain />

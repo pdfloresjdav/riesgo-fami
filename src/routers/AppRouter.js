@@ -13,7 +13,7 @@ import { DashboardRoutes } from './DashboardRoutes';
 import { RegisterScreen } from '../components/register/RegisterScreen';
 import { InicioScreen } from '../components/inicio/InicioScreen';
 
-
+// Main App Route to display all routes
 export const AppRouter = () => {
 
     const { user } = useContext(AuthContext);
@@ -45,6 +45,11 @@ export const AppRouter = () => {
                     
                     <PrivateRoute 
                         path="/home" 
+                        component={ DashboardRoutes } 
+                        isAuthenticated={ user.logged }
+                    />
+                    <PrivateRoute 
+                        path="/cuenta" 
                         component={ DashboardRoutes } 
                         isAuthenticated={ user.logged }
                     />

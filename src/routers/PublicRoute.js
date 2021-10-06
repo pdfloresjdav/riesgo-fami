@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Route, Redirect } from 'react-router-dom';
 
-
+// Public Route for all users
 export const PublicRoute = ({
     isAuthenticated,
     component: Component,

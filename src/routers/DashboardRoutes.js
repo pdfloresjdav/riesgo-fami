@@ -8,7 +8,7 @@ import CertificadosScreen from '../components/certificados/CertificadosScreen';
 import { ProgresoScreen } from '../components/progreso/ProgresoScreen';
 import { InformacionScreen } from '../components/informacion/InformacionScreen';
 
-
+// DashboardRoute used to display Routes
 export const DashboardRoutes = () => {
 
 
@@ -24,7 +24,7 @@ export const DashboardRoutes = () => {
                 <Route exact path="/certificados" component={ CertificadosScreen } />
                 <Route exact path="/progreso" component={ ProgresoScreen } />
                 <Route exact path="/informacion" component={ InformacionScreen } />
-                    <Redirect to="/home" />
+                    {/* <Redirect to="/home" /> */}
                 </Switch>
             </div>
 

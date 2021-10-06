@@ -1,0 +1,36 @@
+
+  @media only screen and (min-device-width: 760px){
+  
+    .footer-img{
+      width: 7%;
+      height: auto;
+      float: right;
+    }
+  
+    .footer-section{
+      background-color: #FFFFFF;
+      position:fixed;
+      bottom:0;
+      left:0;
+      width:100%;
+    }
+  
+  }
+  /* mobile styles */
+  @media only screen and (max-device-width: 760px) {
+  
+    .footer-img{
+      width: 9%;
+      height: auto;
+      float: right;
+    }
+  
+    .footer-section{
+      background-color: #FFFFFF;
+      position:fixed;
+      bottom:0;
+      left:0;
+      width:100%;
+    }
+  
+  }

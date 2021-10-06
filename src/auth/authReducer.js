@@ -1,6 +1,6 @@
 import { types } from '../types/types';
 
-
+// Authentication with Reducer
 export const authReducer = (state = {}, action ) => {
 
     switch ( action.type ) {

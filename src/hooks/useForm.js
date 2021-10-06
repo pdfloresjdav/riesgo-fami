@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-
+// Hook to use in forms components
 export const useForm = ( initialState = {} ) => {
     
     const [values, setValues] = useState(initialState);

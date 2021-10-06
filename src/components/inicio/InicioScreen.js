@@ -1,6 +1,7 @@
 import React from 'react'
 import { FooterMain } from '../footer/FooterMain'
 
+// Start Page Component
 export const InicioScreen = () => {
     const hadlePress = (e) => {
         e.currentTarget.classList.remove("btn-wfp-main");
@@ -13,6 +14,7 @@ export const InicioScreen = () => {
                 Aprender con Edufami es muy facil
                 <br/>
                 Inicie su formacion Ahora
+                <br/>
                 <br/>
                 <a 
                 href="/login" 
