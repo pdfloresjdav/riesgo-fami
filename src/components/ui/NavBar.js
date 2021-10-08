@@ -11,11 +11,6 @@ import { Button,User, Search } from "@wfp/ui";
     SubNavigationHeader,
     SubNavigationTitle,
     SubNavigationLink,
-    SubNavigationContent,
-    SubNavigationFilter,
-    SubNavigationList,
-    SubNavigationGroup,
-    SubNavigationItem,
     Link
   } from "@wfp/ui";
 // Navigation component
@@ -184,14 +179,14 @@ export const Navbar = () => {
                 subNavigation={
                 <SubNavigation>
                     <SubNavigationHeader>
-                    <SubNavigationTitle>{ name }!</SubNavigationTitle>
-                    <SubNavigationLink>
-                        <Button className="nav-item nav-link btn"
-                            onClick={ handleLogout }
-                        > 
-                            Cerrar Sesión
-                        </Button>
-                    </SubNavigationLink>
+                        {/* <SubNavigationTitle>{ name ? name : '' }!</SubNavigationTitle> */}
+                        <SubNavigationLink>
+                            <Button className="nav-item nav-link btn"
+                                onClick={ handleLogout }
+                            > 
+                                Cerrar Sesión
+                            </Button>
+                        </SubNavigationLink>
                     </SubNavigationHeader>
                     
                 </SubNavigation>
