@@ -2,11 +2,13 @@ import React from 'react';
 import { Navbar } from '../components/ui/NavBar';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { HomeScreen } from '../components/home/HomeScreen';
-import { CuentaScreen } from '../components/cuenta/CuentaScreen';
-import { LenguaScreen } from '../components/lengua/LenguaScreen';
-import CertificadosScreen from '../components/certificados/CertificadosScreen';
-import { ProgresoScreen } from '../components/progreso/ProgresoScreen';
-import { InformacionScreen } from '../components/informacion/InformacionScreen';
+import { AccountScreen } from '../components/account/AccountScreen';
+import { LanguageScreen } from '../components/languages/LanguageScreen';
+import CertificatesScreen from '../components/certificates/CertificatesScreen';
+import { ProgressScreen } from '../components/progress/ProgressScreen';
+import { InformationScreen } from '../components/information/InformationScreen';
+import { UnitsScreen } from '../components/units/UnitsScreen';
+import { CoursesScreen } from '../components/courses/CoursesScreen';
 
 // DashboardRoute used to display Routes
 export const DashboardRoutes = () => {
@@ -19,12 +21,14 @@ export const DashboardRoutes = () => {
             <div className="container mt-2">
                 <Switch>
                 <Route exact path="/home" component={ HomeScreen } />
-                <Route exact path="/cuenta" component={ CuentaScreen } />
-                <Route exact path="/lengua" component={ LenguaScreen } />
-                <Route exact path="/certificados" component={ CertificadosScreen } />
-                <Route exact path="/progreso" component={ ProgresoScreen } />
-                <Route exact path="/informacion" component={ InformacionScreen } />
-                    {/* <Redirect to="/home" /> */}
+                <Route exact path="/account" component={ AccountScreen } />
+                <Route exact path="/languages" component={ LanguageScreen } />
+                <Route exact path="/certificates" component={ CertificatesScreen } />
+                <Route exact path="/progress" component={ ProgressScreen } />
+                <Route exact path="/information" component={ InformationScreen } />
+                <Route exact path="/course/:cursoId" component={ CoursesScreen } />
+                <Route exact path="/units/:cursoId" component={ UnitsScreen } />
+                    <Redirect to="/home" />
                 </Switch>
             </div>
 

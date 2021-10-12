@@ -1,17 +1,18 @@
 import { useState, useEffect, useCallback } from "react";
 import axios from "axios";
-// Courses with Api
-export default function  ListCourses (offset, limit)  {
+// List products with Api
+export default function  ListControl (offset, limit, path, path_type="", path_id="")  {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
     const [list, setList] = useState([]);
-    const [hasMore, setHasMore] = useState(false)
+    const [hasMore, setHasMore] = useState(false);
+    const paths_type = (path_type)?'&'+path_type+'='+path_id : '';
     
     const sendQuery = useCallback(async () => {
         let jwt = localStorage.getItem('userToken');
         try {
             const res = await axios.get(
-                process.env.REACT_APP_ADMIN_API_URL + "/courses?offset="+offset+"&limit="+limit,
+                process.env.REACT_APP_ADMIN_API_URL + "/"+ path + "?offset="+offset+"&limit="+limit+paths_type,
                 {
                     "headers": {
                         "Authorization": "Bearer " + jwt
@@ -20,7 +21,7 @@ export default function  ListCourses (offset, limit)  {
             );
             setList((prev) => [...prev, ...res.data.data]);
             setLoading(false);
-            if (res.data.data.length < 3) {
+            if (res.data.data.length < limit) {
                 setHasMore(false)
             }
             else {
@@ -30,7 +31,7 @@ export default function  ListCourses (offset, limit)  {
           setError(err);
           throw error;
         }
-      }, [offset, error, limit]);
+      }, [offset, error, limit, path, paths_type]);
     
       useEffect(() => {
         sendQuery();

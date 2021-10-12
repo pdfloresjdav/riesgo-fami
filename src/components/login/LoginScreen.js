@@ -82,7 +82,7 @@ export const LoginScreen = ({ history }) => {
     };
 
     return (
-        <div className="fondo-main">
+        <div className="fund-main">
             <img src="./assets/idEDUF.png" alt="header" className="img-head"/>
             <div className="text-login-main">
                 <Form onSubmit={ handleSubmit } className="needs-validation">
@@ -119,7 +119,6 @@ export const LoginScreen = ({ history }) => {
                         required
                     />
                     <br/>
-                    <br/>
                     <Button
                         id="btnIngresar"
                         type="submit"
@@ -135,7 +134,7 @@ export const LoginScreen = ({ history }) => {
                     <br/>
                     <br/>
                     <a 
-                        href="/registro" 
+                        href="/registry" 
                         className="btn m-1 btn-block btn-wfp-main"
                         onClick={hadlePress}
                     >

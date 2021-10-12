@@ -1,19 +1,22 @@
 import React, {useContext, useState, useRef, useCallback} from 'react'
 import { Breadcrumb , BreadcrumbHome, BreadcrumbItem } from "@wfp/ui";
-import { useHistory } from 'react-router-dom';
+import { useParams,useHistory } from 'react-router-dom';
 import  ListControl  from '../../controllers/ListControl';
 import { AuthContext } from '../../auth/AuthContext';
 import { types } from '../../types/types';
 import { Link } from "@wfp/ui";
 
-// Home to display "Cursos"
-export const HomeScreen = () => {
+// Home to display "Unidades"
+export const UnitsScreen = () => {
     const { dispatch } = useContext(AuthContext);
     const history = useHistory();
     const [query, setQuery] = useState(0);
     const limit = 3;
-    const path = 'courses'
-    const { loading, error, list, hasMore } = ListControl(query, limit, path);
+    const { cursoId } = useParams();
+    const path = 'course/units';
+    const pathType = 'course_id';
+    const course = (localStorage.getItem('course'))?JSON.parse(localStorage.getItem('course')):'';
+    const { loading, error, list, hasMore } = ListControl(query, limit, path, pathType, cursoId);
     const loader = useRef(null);
     const observer = useRef()
     const handleObserver = useCallback((node) => {
@@ -29,28 +32,32 @@ export const HomeScreen = () => {
     if(error){
         console.log(error)
         dispatch({
-            type: types.logout
+           type: types.logout
         });
         history.replace('/login');
     }
 
+    if(course===''){
+        history.replace('/home');
+    }
+
     const disCourse = ()=>{
         let lists = list;
-        localStorage.setItem('courses', JSON.stringify(lists));
+        console.log(lists)
         return lists.map((course) => (
             (course.state_name==='activo') ?
                 (course.name_course==='RIESGOFAMI') ?
-                        <div ref={handleObserver} key={course.id}><Link href={ `/course/${ course.id }` }><img src="./assets/idRIESGOF.png" alt={course.name_course} className="img-course" /></Link></div>
+                        <div ref={handleObserver} key={course.id}><Link href="/home"><img src="./assets/idRIESGOF.png" alt={course.name_course} className="img-course" /></Link></div>
                     :
-                    <div ref={handleObserver} key={course.id}><Link href={ `/course/${ course.id }` }><img src={process.env.REACT_APP_ADMIN_URL+course.image_course} alt={course.name_course} className="img-course" /></Link></div>
+                    <div ref={handleObserver} key={course.id}><Link href="/home"><img src={process.env.REACT_APP_ADMIN_URL+course.image_unit} alt={course.name_course} className="img-course" /></Link></div>
                     :null
-        ));
+                ));
         
     }
     
     return (
         <div className="content">
-            <div className="text-title">Cursos</div>
+            <div className="text-title">{course && course.name_course}</div>
 
             
             <div className="fund-main-enter">
@@ -59,6 +66,12 @@ export const HomeScreen = () => {
                         <a href="/home">
                         <BreadcrumbHome />
                         </a>
+                    </BreadcrumbItem>
+                    <BreadcrumbItem href={`/course/${cursoId}`}>
+                        {course && course.name_course}
+                    </BreadcrumbItem>
+                    <BreadcrumbItem disableLink>
+                        Unidades
                     </BreadcrumbItem>
                 </Breadcrumb>
                 <div className="content-courses" >

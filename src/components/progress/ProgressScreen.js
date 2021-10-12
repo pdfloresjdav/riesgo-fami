@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const LenguaScreen = () => {
+export const ProgressScreen = () => {
     return (
         <div>
-            <h1>Mi Lengua</h1>
+            <h1>Mi Pogreso</h1>
         </div>
     )
 }

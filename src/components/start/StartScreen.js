@@ -2,13 +2,13 @@ import React from 'react'
 import { FooterMain } from '../footer/FooterMain'
 
 // Start Page Component
-export const InicioScreen = () => {
+export const StartScreen = () => {
     const hadlePress = (e) => {
         e.currentTarget.classList.remove("btn-wfp-main");
         e.currentTarget.classList.add("btn-wfp-main-press");
     };
     return (
-        <div className="fondo-main">
+        <div className="fund-main">
             <img src="./assets/idEDUF.png" alt="header" className="img-head"/>
             <div className="text-main">
                 Aprender con Edufami es muy facil

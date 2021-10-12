@@ -50,7 +50,7 @@ export const Navbar = () => {
         //                         className="nav-item nav-link active" 
         //                         aria-current="page"
         //                         exact
-        //                         to="/cuenta"
+        //                         to="/account"
         //                     >
         //                         Mis Datos
         //                     </NavLink>
@@ -62,7 +62,7 @@ export const Navbar = () => {
         //                         className="nav-item nav-link" 
         //                         aria-current="page"
         //                         exact
-        //                         to="/lengua"
+        //                         to="/languages"
         //                     >
         //                         Mi Lengua
         //                     </NavLink>
@@ -74,7 +74,7 @@ export const Navbar = () => {
         //                         className="nav-item nav-link" 
         //                         aria-current="page"
         //                         exact
-        //                         to="/certificados"
+        //                         to="/certificates"
         //                     >
         //                         Mis Certificados
         //                     </NavLink>
@@ -86,7 +86,7 @@ export const Navbar = () => {
         //                         className="nav-item nav-link" 
         //                         aria-current="page"
         //                         exact
-        //                         to="/progreso"
+        //                         to="/progress"
         //                     >
         //                         Mi Progreso
         //                     </NavLink>
@@ -98,7 +98,7 @@ export const Navbar = () => {
         //                         className="nav-item nav-link" 
         //                         aria-current="page"
         //                         exact
-        //                         to="/informacion"
+        //                         to="/information"
         //                     >
         //                         Información EDUFAMI
         //                     </NavLink>
@@ -122,7 +122,7 @@ export const Navbar = () => {
         //     </div>
         // </nav>
         <MainNavigation 
-        logo={<div className="wfp--main-navigation__logo"><Link href="/home"><img src="./assets/idWFP.png" alt="menu logo" className="menu-img" /></Link><span className="menu-title">EDUFAMI</span></div>}
+        logo={<div className="wfp--main-navigation__logo"><Link href="/home"><img src="/assets/idWFP.png" alt="menu logo" className="menu-img" /></Link><span className="menu-title">EDUFAMI</span></div>}
         >
             <MainNavigationItem>
                 <Link 
@@ -133,28 +133,28 @@ export const Navbar = () => {
             </MainNavigationItem>
             <MainNavigationItem>
                 <Link 
-                    href="/cuenta"
+                    href="/account"
                 >
                     Mis Datos
                 </Link>
             </MainNavigationItem>
             <MainNavigationItem>
                 <Link 
-                    href="/lengua"
+                    href="/languages"
                 >
                     Mi Lengua 
                 </Link>
             </MainNavigationItem>
             <MainNavigationItem>
                 <Link 
-                    href="/certificados"
+                    href="/certificates"
                 >
                     Mis Certificados 
                 </Link>
             </MainNavigationItem>
             <MainNavigationItem>
                 <Link 
-                    href="/progreso"
+                    href="/progress"
                 >
                     Mi Progreso
                 </Link>
@@ -162,7 +162,7 @@ export const Navbar = () => {
             <hr className="dropdown-divider"/>
             <MainNavigationItem>
                 <Link 
-                    href="/informacion"
+                    href="/information"
                 >
                     Información EDUFAMI
                 </Link>

@@ -99,7 +99,7 @@ export const RegisterScreen = ({ history }) => {
     }
 
     return (
-        <div className="fondo-main">
+        <div className="fund-main">
             <img src="./assets/idEDUF.png" alt="header" className="img-head"/>
             <div className="text-reg-main">
                 <Form onSubmit={ handleSubmit } className="needs-validation">

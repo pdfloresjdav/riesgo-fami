@@ -11,7 +11,7 @@ import { PublicRoute } from './PublicRoute';
 import { LoginScreen } from '../components/login/LoginScreen';
 import { DashboardRoutes } from './DashboardRoutes';
 import { RegisterScreen } from '../components/register/RegisterScreen';
-import { InicioScreen } from '../components/inicio/InicioScreen';
+import { StartScreen } from '../components/start/StartScreen';
 
 // Main App Route to display all routes
 export const AppRouter = () => {
@@ -25,7 +25,7 @@ export const AppRouter = () => {
                     <PublicRoute 
                         exact 
                         path="/" 
-                        component={ InicioScreen } 
+                        component={ StartScreen } 
                         isAuthenticated={ user.logged }
                     />
 
@@ -38,7 +38,7 @@ export const AppRouter = () => {
 
                     <PublicRoute 
                         exact 
-                        path="/registro" 
+                        path="/registry" 
                         component={ RegisterScreen } 
                         isAuthenticated={ user.logged }
                     />
@@ -49,7 +49,22 @@ export const AppRouter = () => {
                         isAuthenticated={ user.logged }
                     />
                     <PrivateRoute 
-                        path="/cuenta" 
+                        path="/account" 
+                        component={ DashboardRoutes } 
+                        isAuthenticated={ user.logged }
+                    />
+                    <PrivateRoute 
+                        path="/progress" 
+                        component={ DashboardRoutes } 
+                        isAuthenticated={ user.logged }
+                    />
+                    <PrivateRoute 
+                        path="/course/:cursoId" 
+                        component={ DashboardRoutes } 
+                        isAuthenticated={ user.logged }
+                    />
+                    <PrivateRoute 
+                        path="/units/:cursoId" 
                         component={ DashboardRoutes } 
                         isAuthenticated={ user.logged }
                     />
