@@ -34,7 +34,6 @@ export const CoursesScreen = () => {
       }, [course]);
 
     const disCourse = ()=>{
-        console.log(list)
         course = list.find(o => o.id == cursoId);
         return (course)?
             <div key={course.id} >
