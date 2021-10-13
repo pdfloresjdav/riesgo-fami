@@ -3,7 +3,7 @@ import { AuthContext } from '../../auth/AuthContext';
 import { types } from '../../types/types';
 import { registerUser } from '../../controllers/registerUser';
 import { FooterMain } from '../footer/FooterMain';
-import { Form, TextInput, Button  } from "@wfp/ui";
+import { Form, TextInput, Button, Link  } from "@wfp/ui";
 
 // Registration component
 export const RegisterScreen = ({ history }) => {
@@ -100,7 +100,7 @@ export const RegisterScreen = ({ history }) => {
 
     return (
         <div className="fund-main">
-            <img src="./assets/idEDUF.png" alt="header" className="img-head"/>
+            <Link href="/"><img src="./assets/idEDUF.png" alt="header" className="img-head"/></Link>
             <div className="text-reg-main">
                 <Form onSubmit={ handleSubmit } className="needs-validation">
                     <strong id="invalidMessage" className="invalid-feedback">

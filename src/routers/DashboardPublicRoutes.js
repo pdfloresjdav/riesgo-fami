@@ -14,7 +14,7 @@ export const DashboardPublicRoutes = () => {
             <Route exact path="/" component={ StartScreen } />
             <Route exact path="/login" component={ LoginScreen } />
             <Route exact path="/registry" component={ RegisterScreen } />
-            {/* <Redirect to="/auth" /> */}
+            <Redirect to="/" />
         </Switch>
     )
 }

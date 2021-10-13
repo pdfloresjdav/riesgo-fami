@@ -7,11 +7,8 @@ import {
 import { AuthContext } from '../auth/AuthContext';
 import { PrivateRoute } from './PrivateRoute';
 import { PublicRoute } from './PublicRoute';
-
-import { LoginScreen } from '../components/login/LoginScreen';
 import { DashboardRoutes } from './DashboardRoutes';
-import { RegisterScreen } from '../components/register/RegisterScreen';
-import { StartScreen } from '../components/start/StartScreen';
+import { DashboardPublicRoutes } from './DashboardPublicRoutes';
 
 // Main App Route to display all routes
 export const AppRouter = () => {
@@ -25,21 +22,21 @@ export const AppRouter = () => {
                     <PublicRoute 
                         exact 
                         path="/" 
-                        component={ StartScreen } 
+                        component={ DashboardPublicRoutes } 
                         isAuthenticated={ user.logged }
                     />
 
                     <PublicRoute 
                         exact 
                         path="/login" 
-                        component={ LoginScreen } 
+                        component={ DashboardPublicRoutes } 
                         isAuthenticated={ user.logged }
                     />
 
                     <PublicRoute 
                         exact 
                         path="/registry" 
-                        component={ RegisterScreen } 
+                        component={ DashboardPublicRoutes } 
                         isAuthenticated={ user.logged }
                     />
                     
