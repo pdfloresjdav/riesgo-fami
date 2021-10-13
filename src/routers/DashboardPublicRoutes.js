@@ -11,9 +11,9 @@ export const DashboardPublicRoutes = () => {
 
     return (
         <Switch>
-            <Route exact path="/" component={ StartScreen } />
-            <Route exact path="/login" component={ LoginScreen } />
-            <Route exact path="/registry" component={ RegisterScreen } />
+            <Route exact path="/auth" component={ StartScreen } />
+            <Route exact path="/auth/login" component={ LoginScreen } />
+            <Route exact path="/auth/registry" component={ RegisterScreen } />
             <Redirect to="/" />
         </Switch>
     )

@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import { AuthContext } from '../../auth/AuthContext';
 import { types } from '../../types/types';
 import { useForm } from '../../hooks/useForm';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import queryString from 'query-string';
 import { signIn } from "../../controllers/basicAuth";
 import { FooterMain } from '../footer/FooterMain';
@@ -29,7 +29,7 @@ export const LoginScreen = ({ history }) => {
         btnIngreso.classList.remove("btn-wfp-main");
         btnIngreso.classList.add("btn-wfp-main-press");
         
-        const lastPath = localStorage.getItem('lastPath') || '/';
+        const lastPath = localStorage.getItem('lastPath') || '/home';
         let userPassword = document.getElementById('userPassword').value;
         let userNameErr = document.getElementById('userName');
         if(userName===""){ 
@@ -83,7 +83,7 @@ export const LoginScreen = ({ history }) => {
 
     return (
         <div className="fund-main">
-            <img src="./assets/idEDUF.png" alt="header" className="img-head"/>
+            <img src="/assets/idEDUF.png" alt="header" className="img-head"/>
             <div className="text-login-main">
                 <Form onSubmit={ handleSubmit } className="needs-validation">
                     <strong id="invalidMessage" className="invalid-feedback">
@@ -133,13 +133,12 @@ export const LoginScreen = ({ history }) => {
                     Por favor registrese
                     <br/>
                     <br/>
-                    <a 
-                        href="/registry" 
+                    <Link to={ `/auth/registry` }
                         className="btn m-1 btn-block btn-wfp-main"
                         onClick={hadlePress}
                     >
                         Registrarse
-                    </a>
+                    </Link>
                     
                 </Form>
             </div>

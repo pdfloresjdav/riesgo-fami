@@ -1,10 +1,10 @@
 import React, {useContext, useState, useRef, useCallback} from 'react'
 import { Breadcrumb , BreadcrumbHome, BreadcrumbItem } from "@wfp/ui";
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import  ListControl  from '../../controllers/ListControl';
 import { AuthContext } from '../../auth/AuthContext';
 import { types } from '../../types/types';
-import { Link } from "@wfp/ui";
+//import { Link } from "@wfp/ui";
 
 // Home to display "Cursos"
 export const HomeScreen = () => {
@@ -31,7 +31,7 @@ export const HomeScreen = () => {
         dispatch({
             type: types.logout
         });
-        history.replace('/login');
+        history.replace('/auth/login');
     }
 
     const disCourse = ()=>{
@@ -40,9 +40,9 @@ export const HomeScreen = () => {
         return lists.map((course) => (
             (course.state_name==='activo') ?
                 (course.name_course==='RIESGOFAMI') ?
-                        <div ref={handleObserver} key={course.id}><Link href={ `/course/${ course.id }` }><img src="./assets/idRIESGOF.png" alt={course.name_course} className="img-course" /></Link></div>
+                        <div ref={handleObserver} key={course.id}><Link to={ `/course/${ course.id }` }><img src="./assets/idRIESGOF.png" alt={course.name_course} className="img-course" /></Link></div>
                     :
-                    <div ref={handleObserver} key={course.id}><Link href={ `/course/${ course.id }` }><img src={process.env.REACT_APP_ADMIN_URL+course.image_course} alt={course.name_course} className="img-course" /></Link></div>
+                    <div ref={handleObserver} key={course.id}><Link to={ `/course/${ course.id }` }><img src={process.env.REACT_APP_ADMIN_URL+course.image_course} alt={course.name_course} className="img-course" /></Link></div>
                     :null
         ));
         
@@ -56,9 +56,9 @@ export const HomeScreen = () => {
             <div className="fund-main-enter">
                 <Breadcrumb>
                     <BreadcrumbItem>
-                        <a href="/home">
+                        <Link to="/home">
                         <BreadcrumbHome />
-                        </a>
+                        </Link>
                     </BreadcrumbItem>
                 </Breadcrumb>
                 <div className="content-courses" >

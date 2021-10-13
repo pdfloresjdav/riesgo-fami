@@ -1,5 +1,6 @@
-import React from 'react'
-import { FooterMain } from '../footer/FooterMain'
+import React from 'react';
+import { FooterMain } from '../footer/FooterMain';
+import { Link } from 'react-router-dom';
 
 // Start Page Component
 export const StartScreen = () => {
@@ -16,13 +17,13 @@ export const StartScreen = () => {
                 Inicie su formacion Ahora
                 <br/>
                 <br/>
-                <a 
-                href="/login" 
+                <Link 
+                to="/auth/login" 
                 className="btn m-1 btn-block btn-outline-primary btn-wfp-main"
                 onClick={hadlePress}
                 >
                     Ingresar
-                </a>
+                </Link>
             </div>
             
             <FooterMain />

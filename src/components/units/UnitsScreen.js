@@ -1,10 +1,9 @@
 import React, {useContext, useState, useRef, useCallback} from 'react'
 import { Breadcrumb , BreadcrumbHome, BreadcrumbItem } from "@wfp/ui";
-import { useParams,useHistory } from 'react-router-dom';
+import { useParams,useHistory, Link } from 'react-router-dom';
 import  ListControl  from '../../controllers/ListControl';
 import { AuthContext } from '../../auth/AuthContext';
 import { types } from '../../types/types';
-import { Link } from "@wfp/ui";
 
 // Home to display "Unidades"
 export const UnitsScreen = () => {
@@ -34,7 +33,7 @@ export const UnitsScreen = () => {
         dispatch({
            type: types.logout
         });
-        history.replace('/login');
+        history.replace('/auth/login');
     }
 
     if(course===''){
@@ -47,9 +46,9 @@ export const UnitsScreen = () => {
         return lists.map((course) => (
             (course.state_name==='activo') ?
                 (course.name_course==='RIESGOFAMI') ?
-                        <div ref={handleObserver} key={course.id}><Link href="/home"><img src="./assets/idRIESGOF.png" alt={course.name_course} className="img-course" /></Link></div>
+                        <div ref={handleObserver} key={course.id}><Link to="/home"><img src="./assets/idRIESGOF.png" alt={course.name_course} className="img-course" /></Link></div>
                     :
-                    <div ref={handleObserver} key={course.id}><Link href="/home"><img src={process.env.REACT_APP_ADMIN_URL+course.image_unit} alt={course.name_course} className="img-course" /></Link></div>
+                    <div ref={handleObserver} key={course.id}><Link to="/home"><img src={process.env.REACT_APP_ADMIN_URL+course.image_unit} alt={course.name_course} className="img-course" /></Link></div>
                     :null
                 ));
         
@@ -63,12 +62,14 @@ export const UnitsScreen = () => {
             <div className="fund-main-enter">
                 <Breadcrumb>
                     <BreadcrumbItem>
-                        <a href="/home">
+                        <Link to="/home">
                         <BreadcrumbHome />
-                        </a>
+                        </Link>
                     </BreadcrumbItem>
-                    <BreadcrumbItem href={`/course/${cursoId}`}>
+                    <BreadcrumbItem >
+                        <Link to={`/course/${cursoId}`}>
                         {course && course.name_course}
+                        </Link>
                     </BreadcrumbItem>
                     <BreadcrumbItem disableLink>
                         Unidades

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory,Link } from 'react-router-dom';
 import { AuthContext } from '../../auth/AuthContext';
 import { types } from '../../types/types';
 
@@ -9,8 +9,7 @@ import { Button,User } from "@wfp/ui";
     MainNavigationItem,
     SubNavigation,
     SubNavigationHeader,
-    SubNavigationLink,
-    Link
+    SubNavigationLink
   } from "@wfp/ui";
 // Navigation component
 export const Navbar = () => {
@@ -20,7 +19,7 @@ export const Navbar = () => {
 
     const handleLogout = () => {
 
-        history.replace('/login');
+        history.replace('/auth/login');
 
         dispatch({
             type: types.logout
@@ -35,35 +34,35 @@ export const Navbar = () => {
         >
             <MainNavigationItem>
                 <Link 
-                    href="/home"
+                    to="/home"
                 >
                 Cursos
                 </Link>
             </MainNavigationItem>
             <MainNavigationItem>
                 <Link 
-                    href="/account"
+                    to="/account"
                 >
                     Mis Datos
                 </Link>
             </MainNavigationItem>
             <MainNavigationItem>
                 <Link 
-                    href="/lenguages"
+                    to="/lenguages"
                 >
                     Mi Lengua 
                 </Link>
             </MainNavigationItem>
             <MainNavigationItem>
                 <Link 
-                    href="/certificates"
+                    to="/certificates"
                 >
                     Mis Certificados 
                 </Link>
             </MainNavigationItem>
             <MainNavigationItem>
                 <Link 
-                    href="/progress"
+                    to="/progress"
                 >
                     Mi Progreso
                 </Link>
@@ -71,7 +70,7 @@ export const Navbar = () => {
             <hr className="dropdown-divider"/>
             <MainNavigationItem>
                 <Link 
-                    href="/information"
+                    to="/information"
                 >
                     Información EDUFAMI
                 </Link>

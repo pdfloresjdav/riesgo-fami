@@ -1,9 +1,9 @@
 import React, {useContext, useState, useEffect} from 'react'
 import { Breadcrumb , BreadcrumbHome, BreadcrumbItem } from "@wfp/ui";
-import { useParams,useHistory } from 'react-router-dom';
+import { useParams,useHistory,Link } from 'react-router-dom';
 import { AuthContext } from '../../auth/AuthContext';
 import { types } from '../../types/types';
-import { Link, Button } from "@wfp/ui";
+import { Button } from "@wfp/ui";
 
 // Home to display "Curso"
 export const CoursesScreen = () => {
@@ -40,7 +40,7 @@ export const CoursesScreen = () => {
                 <img src={imgCourse} alt={course.name_course} className="img-course" />
                 <div className="course-description">{course.description_course}
                     <div className="course-enter">
-                        <Link href={ `/units/${ course.id }` }>
+                        <Link to={ `/units/${ course.id }` }>
                             <Button
                                     id="btnIngresar"
                                     type="submit"
@@ -61,9 +61,9 @@ export const CoursesScreen = () => {
             <div className="text-title">{cursoNombre}</div>
                 <Breadcrumb>
                     <BreadcrumbItem>
-                        <a href="/home">
+                        <Link to="/home">
                         <BreadcrumbHome />
-                        </a>
+                        </Link>
                     </BreadcrumbItem>
                     <BreadcrumbItem disableLink>
                         {cursoNombre}

@@ -20,22 +20,7 @@ export const AppRouter = () => {
             <div>
                 <Switch> 
                     <PublicRoute 
-                        exact 
-                        path="/" 
-                        component={ DashboardPublicRoutes } 
-                        isAuthenticated={ user.logged }
-                    />
-
-                    <PublicRoute 
-                        exact 
-                        path="/login" 
-                        component={ DashboardPublicRoutes } 
-                        isAuthenticated={ user.logged }
-                    />
-
-                    <PublicRoute 
-                        exact 
-                        path="/registry" 
+                        path="/auth" 
                         component={ DashboardPublicRoutes } 
                         isAuthenticated={ user.logged }
                     />
