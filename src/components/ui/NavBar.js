@@ -49,7 +49,7 @@ export const Navbar = () => {
             </MainNavigationItem>
             <MainNavigationItem>
                 <Link 
-                    href="/lengua"
+                    href="/lenguages"
                 >
                     Mi Lengua 
                 </Link>
