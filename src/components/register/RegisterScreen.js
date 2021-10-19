@@ -78,6 +78,7 @@ export const RegisterScreen = ({ history }) => {
                     dispatch({
                         type: types.login,
                         payload: {
+                            id: e.data.user.id,
                             name: e.data.user.name,
                             token: e.data.access_token
                         }

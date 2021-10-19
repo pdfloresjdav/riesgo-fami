@@ -9,6 +9,7 @@ import { ProgressScreen } from '../components/progress/ProgressScreen';
 import { InformationScreen } from '../components/information/InformationScreen';
 import { UnitsScreen } from '../components/units/UnitsScreen';
 import { CoursesScreen } from '../components/courses/CoursesScreen';
+import { LessonsScreen } from '../components/lessons/LessonsScreen';
 
 // DashboardRoute used to display Routes
 export const DashboardRoutes = () => {
@@ -28,6 +29,7 @@ export const DashboardRoutes = () => {
                 <Route exact path="/information" component={ InformationScreen } />
                 <Route exact path="/course/:cursoId" component={ CoursesScreen } />
                 <Route exact path="/units/:cursoId" component={ UnitsScreen } />
+                <Route exact path="/unit/:unitId" component={ LessonsScreen } />
                     <Redirect to="/home" />
                 </Switch>
             </div>

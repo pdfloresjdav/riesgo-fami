@@ -4,20 +4,23 @@ import { useParams,useHistory, Link } from 'react-router-dom';
 import  ListControlByUser  from '../../controllers/ListControlByUser';
 import { AuthContext } from '../../auth/AuthContext';
 import { types } from '../../types/types';
+import { singleControl } from '../../controllers/singleControl';
 
-// Home to display "Unidades"
-export const UnitsScreen = () => {
+// Home to display "Lecciones"
+export const LessonsScreen = () => {
     const { dispatch } = useContext(AuthContext);
     const history = useHistory();
     const [query, setQuery] = useState(0);
-    const limit = 3;
-    const { cursoId } = useParams();
-    const path = 'course/units';
-    const pathType = 'course_id';
-    localStorage.setItem('courseId',cursoId);
+    const [imgCourse, setImgCourse] = useState("");
+    const [nameUnit, setNameUnit] = useState("");
+    const limit = 10;
+    const { unitId } = useParams();
+    const cursoId = localStorage.getItem('courseId');
+    localStorage.setItem('unitId',unitId);
+    const path = 'unit/lessons';
+    const pathType = 'unit_id';
     const course = (localStorage.getItem('course'))?JSON.parse(localStorage.getItem('course')):'';
-    const imgCourse = (course.name_course==='RIESGOFAMI')?"/assets/IN_riesgof.png":process.env.REACT_APP_ADMIN_URL+course.image_course;
-    const { loading, error, list, hasMore } = ListControlByUser(query, limit, path, pathType, cursoId);
+    const { loading, error, list, hasMore } = ListControlByUser(query, limit, path, pathType, unitId);
     const loader = useRef(null);
     const observer = useRef()
     const handleObserver = useCallback((node) => {
@@ -29,6 +32,18 @@ export const UnitsScreen = () => {
         })
         if (node) observer.current.observe(node)
     }, [hasMore]);
+    const pathC = 'course/unit';
+    const pathTypeC = 'unit_id';
+    if(hasMore===false){
+        const listUnit = singleControl(0, limit, pathC, pathTypeC, unitId);
+        listUnit.then((e)=>{
+                setImgCourse(process.env.REACT_APP_ADMIN_URL+e.image_unit)
+                setNameUnit(e.name_unit)
+            }
+        );
+        
+    }
+    
 
     if(error){
         console.log(error)
@@ -57,11 +72,11 @@ export const UnitsScreen = () => {
             (course.state_name==='activo') ?
                     <div ref={handleObserver} key={course.id} className={(course.id===count.id)?"btn-unit-main-on":"btn-unit"}>
                             <Link 
-                            to={(course.id===count.id || course.status_approved!=="pendiente")?`/unit/${course.id}`:"#"} 
+                            to={(course.id===count.id || course.status_approved!=="pendiente")?`/chapter/${course.id}`:"#"} 
                                 className="lkn-next"
                             >
                                 <div className="btn-unit-text">
-                                {course.name_unit}
+                                {course.name_unit_lesson}
                                 </div>
                                 <div className={(course.id===count.id)?"btn-unit-on":(course.status_approved==="pendiente")?"btn-unit-pending":"btn-unit-ok"}></div>
                                    
@@ -78,7 +93,8 @@ export const UnitsScreen = () => {
             <div className="text-title">{course && course.name_course}</div>
 
             
-            <div className="fund-main-unit">
+            <div className="fund-main-lesson">
+            <div className="title-unit">{nameUnit}</div>
                 <Breadcrumb>
                     <BreadcrumbItem>
                         <Link to="/home">
@@ -90,11 +106,17 @@ export const UnitsScreen = () => {
                         {course && course.name_course}
                         </Link>
                     </BreadcrumbItem>
+                    <BreadcrumbItem>
+                        <Link to={`/units/${cursoId}`}>
+                            Unidades
+                        </Link>
+                    </BreadcrumbItem>
                     <BreadcrumbItem disableLink>
-                        Unidades
+                        Lecciones
                     </BreadcrumbItem>
                 </Breadcrumb>
                 <div className="content-courses" >
+                    
                 
                 <img src={imgCourse} alt={course.name_course} className="img-course" />
                 {list && disCourse() }

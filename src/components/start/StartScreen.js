@@ -9,7 +9,7 @@ export const StartScreen = () => {
         e.currentTarget.classList.add("btn-wfp-main-press");
     };
     return (
-        <div className="fund-main">
+        <div className="fund-start">
             <img src="./assets/idEDUF.png" alt="header" className="img-head"/>
             <div className="text-main">
                 Aprender con Edufami es muy facil

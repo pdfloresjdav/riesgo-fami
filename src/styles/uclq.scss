@@ -1,0 +1,190 @@
+
+  @media only screen and (min-device-width: 760px){
+  
+    .btn-unit{
+        width: 100%;
+        height: 50px;
+        background-color: #FFFFFF;
+        padding: 10px;
+        margin-bottom: 5px;
+        display: inline-block;
+        color: #686565;
+        box-shadow: 5px 5px rgba(94, 92, 92, 0.5);
+        &:hover{
+            background-color: #007DBC;
+            color: #FFFFFF;
+            .lkn-next{
+                text-decoration: none;
+                color: #FFFFFF;
+            }
+        }
+    }
+
+    .btn-unit-main-on{
+        width: 100%;
+        height: 50px;
+        background-color: #F47847;
+        padding: 10px;
+        margin-bottom: 5px;
+        display: inline-block;
+        color: #FFFFFF;
+        box-shadow: 5px 5px rgba(94, 92, 92, 0.5);
+        .lkn-next{
+            text-decoration: none;
+            color: #FFFFFF;
+        }
+    }
+
+    .btn-unit-pending{
+        height: 25px;
+        width: 25px;
+        background-color: #bbb;
+        border-radius: 50%;
+        float: right;
+        margin-top: -15px;
+        position: relative;
+        &:hover{
+            color: #FFFFFF;
+        }
+    }
+
+    .btn-unit-text{
+        position: initial;
+        width: 90%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        &:hover{
+            color: #FFFFFF;
+        }
+    }
+
+    .lkn-next{
+        text-decoration: none;
+        color: #686565;
+    }
+
+
+    .btn-unit-ok{
+        background: url("./../assets/unit_ok.png"); 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        position: fixed; 
+        right: 0; 
+        min-width: 25px;
+        min-height: 25px;
+        margin-top: -15px;
+      }
+
+      .btn-unit-on{
+        background: url("./../assets/unit_on.png"); 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        position: fixed; 
+        right: 0; 
+        min-width: 25px;
+        min-height: 25px;
+        margin-top: -15px;
+      }
+  
+  }
+  /* mobile styles */
+  @media only screen and (max-device-width: 760px) {
+  
+    .btn-unit{
+        width: 100%;
+        height: 50px;
+        background-color: #FFFFFF;
+        padding: 10px;
+        margin-bottom: 5px;
+        display: inline-block;
+        color: #686565;
+        box-shadow: 5px 5px rgba(94, 92, 92, 0.5);
+        &:hover{
+            background-color: #007DBC;
+            color: #FFFFFF;
+            .lkn-next{
+                text-decoration: none;
+                color: #FFFFFF;
+            }
+        }
+    }
+
+    .btn-unit-main-on{
+        width: 100%;
+        height: 50px;
+        background-color: #F47847;
+        padding: 10px;
+        margin-bottom: 5px;
+        display: inline-block;
+        color: #FFFFFF;
+        box-shadow: 5px 5px rgba(94, 92, 92, 0.5);
+        .lkn-next{
+            text-decoration: none;
+            color: #FFFFFF;
+        }
+    }
+    .btn-unit-pending{
+        height: 25px;
+        width: 25px;
+        background-color: #bbb;
+        border-radius: 50%;
+        float: right;
+        margin-top: -15px;
+        position: relative;
+    }
+
+    .btn-unit-text{
+        position: initial;
+        width: 350px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .lkn-next{
+        text-decoration: none;
+        color: #686565;
+    }
+
+    .btn-unit-ok{
+        background: url("./../assets/unit_ok.png"); 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        position: fixed; 
+        right: 0; 
+        min-width: 25px;
+        min-height: 25px;
+        margin-top: -15px;
+      }
+
+      .btn-unit-on{
+        background: url("./../assets/unit_on.png"); 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        position: fixed; 
+        right: 0; 
+        min-width: 25px;
+        min-height: 25px;
+        margin-top: -15px;
+      }
+
+      .title-unit{
+        background-color: #36B5C5;
+        color: #FFFFFF;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        font-weight: bold;
+        height: 35px;
+      }
+  
+  }

@@ -57,6 +57,20 @@ body{
       border-radius: 15px;
     }
 
+    .fund-start{
+      background: url("./../assets/fondo_banano.png") no-repeat center center fixed; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      position: fixed; 
+      top: 0; 
+      left: 0; 
+      min-width: 100%;
+      min-height: 100%;
+      
+    }
+
     .fund-main{
       background: url("./../assets/fond1.png") no-repeat center center fixed; 
       -webkit-background-size: cover;
@@ -80,6 +94,18 @@ body{
       left: 0; 
       min-width: 100%;
       min-height: 100%;
+    }
+    .fund-main-unit{
+      background: url("./../assets/fond5.png") no-repeat center center fixed; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      position: fixed; 
+      left: 0; 
+      min-width: 100%;
+      min-height: 100%;
+      
     }
     .text-main{
       color: #FFFFFF;
@@ -201,6 +227,19 @@ body{
       width: 150px;
       border-radius: 15px;
     }
+    .fund-start{
+      background: url("./../assets/fondo_banano.png") no-repeat center center fixed; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      position: fixed; 
+      top: 0; 
+      left: 0; 
+      min-width: 100%;
+      min-height: 100%;
+      
+    }
   
     .fund-main{
       background: url("./../assets/fond1.png") no-repeat center center fixed; 
@@ -217,6 +256,28 @@ body{
     }
     .fund-main-enter{
         background: url("./../assets/fond3bl.png") no-repeat center center fixed; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      position: fixed; 
+      left: 0; 
+      min-width: 100%;
+      min-height: 100%;
+    }
+    .fund-main-unit{
+      background: url("./../assets/fond5.png") no-repeat center center fixed; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      position: fixed; 
+      left: 0; 
+      min-width: 100%;
+      min-height: 100%;
+    }
+    .fund-main-lesson{
+      background: url("./../assets/fonUN1.png") no-repeat center center fixed; 
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
@@ -298,6 +359,18 @@ body{
 
     .fund-main-course{
       background: url("./../assets/fond4.png") no-repeat center center fixed; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      position: fixed; 
+      left: 0; 
+      min-width: 100%;
+      min-height: 100%;
+    }
+
+    .fund-main-lesson{
+      background: url("./../assets/fonUN1.png") no-repeat center center fixed; 
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
