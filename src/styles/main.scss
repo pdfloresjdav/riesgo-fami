@@ -208,6 +208,31 @@ body{
       overflow-y: auto;
       height: 550px;
     }
+
+    .img-unit{
+      display: block;
+      width:300px;
+      height:300px;
+      border-radius:50%;
+      margin-right: auto;
+      border-style: solid;
+      border-color: white;
+      border-width: 15px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      margin-left: auto;
+    }
+    .fund-main-lesson{
+      background: url("./../assets/fonUN1.png") no-repeat center center fixed; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      position: fixed; 
+      left: 0; 
+      min-width: 100%;
+      min-height: 100%;
+    }
   }
   /* mobile styles */
   @media only screen and (max-device-width: 760px) {
@@ -276,17 +301,7 @@ body{
       min-width: 100%;
       min-height: 100%;
     }
-    .fund-main-lesson{
-      background: url("./../assets/fonUN1.png") no-repeat center center fixed; 
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-      position: fixed; 
-      left: 0; 
-      min-width: 100%;
-      min-height: 100%;
-    }
+    
     .text-main{
       color: #FFFFFF;
       text-align: center;
@@ -402,5 +417,19 @@ body{
       margin-top: 40px;
       overflow-y: auto;
       height: 570px;
+    }
+
+    .img-unit{
+      display: block;
+      width:250px;
+      height:250px;
+      border-radius:50%;
+      margin-right: auto;
+      border-style: solid;
+      border-color: white;
+      border-width: 15px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      margin-left: auto;
     }
   }

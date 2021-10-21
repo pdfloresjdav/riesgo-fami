@@ -118,8 +118,11 @@ export const LessonsScreen = () => {
                 <div className="content-courses" >
                     
                 
-                <img src={imgCourse} alt={course.name_course} className="img-course" />
-                {list && disCourse() }
+                <img src={imgCourse} alt={course.name_course} className="img-unit" />
+                <div className="container-ulc">
+                    {list && disCourse() }
+                </div>
+                
                 </div>
                 {loading && <p>Loading...</p>}
                 {error && <p>Error!</p>}

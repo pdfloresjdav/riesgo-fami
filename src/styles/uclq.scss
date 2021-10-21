@@ -71,24 +71,44 @@
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
-        position: fixed; 
+        //position: fixed; 
+        float: right;
         right: 0; 
         min-width: 25px;
         min-height: 25px;
         margin-top: -15px;
+        width: 25px;
+        height: auto;
       }
 
-      .btn-unit-on{
+    .btn-unit-on{
         background: url("./../assets/unit_on.png"); 
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
-        position: fixed; 
+        //position: fixed; 
+        float: right;
         right: 0; 
         min-width: 25px;
         min-height: 25px;
         margin-top: -15px;
+        width: 25px;
+        height: auto;
+      }
+      .title-unit{
+        background-color: #36B5C5;
+        color: #FFFFFF;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        font-weight: bold;
+        height: 35px;
+      }
+
+      .container-ulc{
+        height: 150px;
+        overflow-y: auto;
       }
   
   }
@@ -157,11 +177,14 @@
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
-        position: fixed; 
+        //position: fixed; 
+        float: right;
         right: 0; 
         min-width: 25px;
         min-height: 25px;
         margin-top: -15px;
+        width: 25px;
+        height: auto;
       }
 
       .btn-unit-on{
@@ -170,11 +193,14 @@
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
-        position: fixed; 
+        //position: fixed; 
+        float: right;
         right: 0; 
         min-width: 25px;
         min-height: 25px;
         margin-top: -15px;
+        width: 25px;
+        height: auto;
       }
 
       .title-unit{
@@ -185,6 +211,12 @@
         text-align: center;
         font-weight: bold;
         height: 35px;
+      }
+
+      .container-ulc{
+        height: 300px;
+        overflow-y: auto;
+        margin-top: 50px;
       }
   
   }
